@@ -42,7 +42,7 @@ flowchart LR
     Django --> urlResolver[URL Resolver]
     urlResolver --> urls1[urls.py]
     urls1 --> urls2[urls.py]
-    urls2 --> views[views.py (controller)]
+    urls2 --> views[views.py]
     views --> model[model.py]
     model --> DB[DB]
     views --> Templates[Templates]
