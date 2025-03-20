@@ -89,9 +89,11 @@ def home(request):
 <link rel="stylesheet" href="{% static 'style.css' %}">
 ```
 > basicProject01/basicProject01/settings.py
+```python
 ```diff
 import os
 
 STATIC_URL = 'static/'
 - STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+```
 ```
