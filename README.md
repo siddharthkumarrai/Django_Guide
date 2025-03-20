@@ -32,9 +32,8 @@ $ python manage.py runserver
 $ python manage.py runserver 8001
 ```
 ## Django server architecture
-# My Project
 
-## Django Request-Response Flow
+### Django Request-Response Flow
 
 ```mermaid
 flowchart LR
@@ -43,10 +42,10 @@ flowchart LR
     Django --> urlResolver[URL Resolver]
     urlResolver --> urls1[urls.py]
     urls1 --> urls2[urls.py]
-    urls2 --> views[views.py<br>(controller)]
+    urls2 --> views[views.py (controller)]
     views --> model[model.py]
-    model --> DB
-    views --> Templates
+    model --> DB[DB]
+    views --> Templates[Templates]
     views -->|Response| Django
     Django -->|res| Browser
     Browser -->|res| User
