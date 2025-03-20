@@ -70,3 +70,14 @@ urlpatterns = [
     - index.html
 - db.sqlite3
 - manage.py
+## Render html page
+> views.py
+```python
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'website/index.html')
+```
+```diff
+- Error :- TemplateDoesNotExist at /
+```
