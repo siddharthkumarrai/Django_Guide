@@ -33,7 +33,7 @@ $ python manage.py runserver 8001
 ```
 ## Django server architecture
 #### Django Request-Response Flow
-![Flowchart of User to views.py](https://res.cloudinary.com/dnknslaku/image/upload/v1742490766/Screenshot_2025-03-20_223417_l1umlm.png)
+![Flowchart of User to views.py](https://res.cloudinary.com/dnknslaku/image/upload/v1742497915/Screenshot_2025-03-21_004132_a9erfp.png)
 ```mermaid
 flowchart LR
     User -->|REQ| urls.py --> views.py
@@ -107,3 +107,5 @@ INSTALLED_APPS = [
     'sidd',
 ]
 ```
+|- sidd
+|--- templates
