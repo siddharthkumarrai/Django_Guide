@@ -78,6 +78,4 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'website/index.html')
 ```
-```diff
-- Error :- TemplateDoesNotExist at /
-```
+```diff - Error :- TemplateDoesNotExist at /```
