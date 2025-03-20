@@ -61,3 +61,9 @@ urlpatterns = [
     path('sidd',views.sidd, name='sidd')
 ]
 ```
+## Django Folder Structure
+- .venv
+- basicProject01
+    - basicProject01
+- static
+- templates
