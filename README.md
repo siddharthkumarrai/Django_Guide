@@ -32,7 +32,7 @@ $ python manage.py runserver
 $ python manage.py runserver 8001
 ```
 ## Django server architecture
-## Django Request-Response Flow
+#### Django Request-Response Flow
 ![Flowchart of User to views.py](https://res.cloudinary.com/dnknslaku/image/upload/v1742490766/Screenshot_2025-03-20_223417_l1umlm.png)
 ```mermaid
 flowchart LR
