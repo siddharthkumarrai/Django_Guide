@@ -34,7 +34,7 @@ $ python manage.py runserver 8001
 ## Django server architecture
 ```mermaid
 flowchart LR
-    User --> urls.py --> views.py
+    User -->|REQ| urls.py --> views.py
     User -->|RES| urls.py
 ```
 > basicProject01/basicProject01/views.py
