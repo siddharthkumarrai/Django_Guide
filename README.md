@@ -83,10 +83,10 @@ def home(request):
 - Error :- TemplateDoesNotExist at /
 ```
 ## Link style.css
-```html
-{% load static %}
+```diff
+- {% load static %}
 <!DOCTYPE>
-<link rel="stylesheet" href="{% static 'style.css' %}">
+- <link rel="stylesheet" href="{% static 'style.css' %}">
 ```
 > basicProject01/basicProject01/settings.py
 ```diff
