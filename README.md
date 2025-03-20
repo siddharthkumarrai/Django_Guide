@@ -101,7 +101,9 @@ $python manage.py startapp sidd
 ```
 step 1:- To aware main project in our new app
 > basicProject01/basicProject01/settings.py
-```diff
+```python
 INSTALLED_APPS = [
-    - 'sidd'
+    'django.contrib.staticfiles',
+    'sidd',
 ]
+```
