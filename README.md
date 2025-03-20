@@ -67,3 +67,6 @@ urlpatterns = [
     - basicProject01
 - static
 - templates
+    - index.html
+- db.sqlite3
+- manage.py
