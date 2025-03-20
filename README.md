@@ -107,6 +107,3 @@ INSTALLED_APPS = [
     'sidd',
 ]
 ```
-|- sidd
-|
-|--- templates
