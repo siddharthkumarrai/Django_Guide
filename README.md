@@ -84,14 +84,14 @@ def home(request):
 ```
 ## Link style.css
 ```diff
-- {% load static %}
++ {% load static %}
 <!DOCTYPE>
-- <link rel="stylesheet" href="{% static 'style.css' %}">
++ <link rel="stylesheet" href="{% static 'style.css' %}">
 ```
 > basicProject01/basicProject01/settings.py
 ```diff
 import os
 
 STATIC_URL = 'static/'
-- STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
++ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 ```
