@@ -66,6 +66,7 @@ urlpatterns = [
 - basicProject01
     - basicProject01
 - static
+- - style.css
 - templates
     - index.html
 - db.sqlite3
@@ -78,4 +79,19 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'website/index.html')
 ```
-```diff - Error :- TemplateDoesNotExist at /```
+```diff 
+- Error :- TemplateDoesNotExist at /
+```
+## Link style.css
+```html
+{% load static %}
+<!DOCTYPE>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+```
+> basicProject01/basicProject01/settings.py
+```diff
+import os
+
+STATIC_URL = 'static/'
+- STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+```
