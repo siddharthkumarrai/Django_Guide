@@ -33,7 +33,7 @@ $ python manage.py runserver 8001
 ```
 ## Django server architecture
 
-### Django Request-Response Flow
+## Django Request-Response Flow
 
 ```mermaid
 flowchart LR
