@@ -35,7 +35,8 @@ $ python manage.py runserver 8001
 ```mermaid
 flowchart LR
     User -->|REQ| urls.py --> views.py
-    User -->|RES| urls.py
+    User --> urls.py
+    views.py -->|RES| User
 ```
 > basicProject01/basicProject01/views.py
 ```python
