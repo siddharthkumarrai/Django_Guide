@@ -95,3 +95,13 @@ import os
 STATIC_URL = 'static/'
 + STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 ```
+## How to make Django app
+```python
+$python manage.py startapp sidd
+```
+step 1:- To aware main project in our new app
+> basicProject01/basicProject01/settings.py
+```diff
+INSTALLED_APPS = [
+    - 'sidd'
+]
