@@ -32,24 +32,8 @@ $ python manage.py runserver
 $ python manage.py runserver 8001
 ```
 ## Django server architecture
-
 ## Django Request-Response Flow
-
-```mermaid
-flowchart LR
-    User -->|req| Browser
-    Browser -->|req| Django
-    Django --> urlResolver[URL Resolver]
-    urlResolver --> urls1[urls.py]
-    urls1 --> urls2[urls.py]
-    urls2 --> views[views.py]
-    views --> model[model.py]
-    model --> DB[DB]
-    views --> Templates[Templates]
-    views -->|Response| Django
-    Django -->|res| Browser
-    Browser -->|res| User
-```
+![Flowchart of User to views.py](https://res.cloudinary.com/dnknslaku/image/upload/v1742490766/Screenshot_2025-03-20_223417_l1umlm.png)
 ```mermaid
 flowchart LR
     User -->|REQ| urls.py --> views.py
