@@ -92,6 +92,7 @@ TEMPLATES = [
         'APP_DIRS': True,
     }
 ]
+```
 ## Link style.css
 ```diff
 + {% load static %}
