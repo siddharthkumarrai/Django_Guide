@@ -82,6 +82,16 @@ def home(request):
 ```diff 
 - Error :- TemplateDoesNotExist at /
 ```
+### Resolve Error
+> basicProject01/basicProject01/settings.py
+```diff
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backenss.django.DjangoTemplates',
+      + 'DIRS': ['templates'],
+        'APP_DIRS': True,
+    }
+]
 ## Link style.css
 ```diff
 + {% load static %}
