@@ -174,3 +174,28 @@ urlpatterns = [
   </body>
 </html>
 ```
+## How to use layout templates
+> basicProject01/templates/website/index.html
+```python
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <h1>hello jii </h1>
+{% endblock %}
+```
+> basicProject01/sidd/templates/sidd/all_sidd.html
+```python
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <h1>all sidd page</h1>
+{% endblock %}
+```
