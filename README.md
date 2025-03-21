@@ -153,7 +153,8 @@ urlpatterns = [
     path('order/', viewa.order, name='all_sidd'),
 ]
 ```
-## > basicProject01/templates/layout.html
+## How to make Layout file
+> basicProject01/templates/layout.html
 ```html
 {% load static %}
 <!doctype html>
