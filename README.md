@@ -93,6 +93,15 @@ TEMPLATES = [
     }
 ]
 ```
+<pre>
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backenss.django.DjangoTemplates',
+      <strong style="color:red;">+ 'DIRS': ['templates'],</strong>
+        'APP_DIRS': True,
+    }
+]
+</pre>
 ## Link style.css
 ```diff
 + {% load static %}
