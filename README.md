@@ -115,6 +115,62 @@ step 1:- To aware main project in our new app
 ```python
 INSTALLED_APPS = [
     'django.contrib.staticfiles',
-    'sidd',
+    'sidd',                                ⚠️
 ]
+```
+## to configure emmit abbreviations in vsCode
+- press CTRL + , and search emmit
+    - Emmet: Include Languages -> click on Add Item
+    - Item = django-html, Value = html
+  
+> sidd/templates/sidd/all_sidd.html
+> sidd/views.py
+```python
+from django.shortcuts import render
+
+def all_sidd(request):
+    return render(request,'sidd/all_sidd.html
+```
+## url transfer in a app
+> basicProject01/basicProject01/urls.py
+```python
+from django.contrib import admin
+from django.urls import path, include
+from . import views
+urlpatterns = [
+    path('admin/',admin.site.urls)
+    path('',views.home, name='home')
+    path('sidd',views.sidd, name='sidd')
+    path('sidd/', include('sidd.urls))
+
+```
+> sidd/urls.py
+```python
+from django.urls import path
+from . import views
+urlpatterns = [
+    path('', views.all_sidd, name="all_home),
+    path('order/', viewa.order, name='all_sidd'),
+]
+```
+## > basicProject01/templates/layout.html
+```html
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="{{ page_description | escape }}">
+    <title>
+        {% block title %}
+            Default value
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+  </head>
+  <body>
+    <nav>this is navbar </nav>
+{% block content %}{% endblock%}
+  </body>
+</html>
 ```
