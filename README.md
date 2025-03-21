@@ -96,8 +96,8 @@ TEMPLATES = [
 <pre>
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backenss.django.DjangoTemplates',
-      <strong style="color:red;">+ 'DIRS': ['templates'],</strong>
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        <span style="color: red; font-weight: bold;">+ 'DIRS': ['templates'],</span>
         'APP_DIRS': True,
     }
 ]
