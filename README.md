@@ -88,20 +88,11 @@ def home(request):
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backenss.django.DjangoTemplates',
-      + 'DIRS': ['templates'],
+        'DIRS': ['templates'], ✅ 
         'APP_DIRS': True,
     }
 ]
 ```
-<div>
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        <span style="color: red; font-weight: bold;">+ 'DIRS': ['templates'],</span>
-        'APP_DIRS': True,
-    }
-]
-</div>
 ## Link style.css
 ```diff
 + {% load static %}
