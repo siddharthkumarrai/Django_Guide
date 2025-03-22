@@ -335,3 +335,11 @@ urlpatterns = [
 ```diff
 ! you have 18 unapplied migration(s)
 ```
+- run this command to resolve this waring and error
+```python
+(.venv)$python manage.py migrate
+```
+## Create a super user
+```python
+(.venv)$python manage.py createsuperuser
+```
