@@ -200,3 +200,138 @@ urlpatterns = [
     <h1>all sidd page</h1>
 {% endblock %}
 ```
+## How to install tailwind css
+```python
+(.venv)$uv pip install pytailwindcss
+```
+#### with hot reload
+```python
+(.venv)$uv pip install 'django-tailwind[reload]'
+```
+- if this cmd give
+  package audited (package will not installed)
+  then install pip our project
+  - command 1 :
+  ```python
+  (.venv)$python -m ensurepip --upgrade
+  ```
+  - command 2 :
+  ```python
+  (.venv)$python -m pip install --upgrade pip
+  ```
+  again try reload command
+```python
+(.venv)$pip install 'django-tailwind[reload]'
+```
+> basicProject01/basicProject01/settings.py
+```python
+INSTALLED_APPS = [
+    'django.contrib.staticfiles',
+    'sidd',                                
+    'tailwind'                             ⚠️
+]
+```
+- To run tailwind css
+```python
+(.venv)$python manage.py tailwind init
+```
+> basicProject01/basicProject01/settings.py
+```python
+INSTALLED_APPS = [
+    'django.contrib.staticfiles',
+    'sidd',                                
+    'tailwind',                           
+    'theme',                                 ⚠️
+]
+
+TAILWIND_APP_NAME = 'theme'                  ⚠️
+INTERNAL_IPS=['127.0.0.1']
+```
+##### INSTALL TAILWIND
+```python
+(.venv)$python manage.py tailwind install
+```
+> basicProject01/templates/layout.html
+```html
+{% load static tailwind_tags %}                              ⚠️
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="{{ page_description | escape }}">
+    <title>
+        {% block title %}
+            Default value
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    {% tailwind_css %}                                         ⚠️
+  </head>
+  <body>
+    <nav>this is navbar </nav>
+{% block content %}{% endblock%}
+  </body>
+</html>
+```
+## run this command in new terminal
+```python
+(.venv)$python manage.py tailwind start
+```
+## To resolve tailwind errors
+- open command prompt
+```python
+C:\Users\siddh>where npm
+C:\Program Files\nodejs\npm
+C:\Program Files\nodejs\npm.cmd
+```
+> basicProject01/basicProject01/settings.py
+```python
+INSTALLED_APPS = [
+    'django.contrib.staticfiles',
+    'sidd',                                
+    'tailwind',                           
+    'theme',                                 
+]
+
+TAILWIND_APP_NAME = 'theme'                  
+INTERNAL_IPS=['127.0.0.1']
+
+NPM_BIN_PATH=r"C:\Program Files\nodejs\npm.cmd"    ⚠️
+```
+## To enable Hot reload
+> basicProject01/basicProject01/settings.py
+```python
+INSTALLED_APPS = [
+    'django.contrib.staticfiles',
+    'sidd',                                
+    'tailwind',                           
+    'theme',
+    'django_browser_reload',                                     ⚠️                               
+]
+
+MIDDLEWARE = [
+
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'django_browser_reload.middleware.BrowserReloadMiddleware",    ⚠️ 
+]
+```
+>  basicProject01/basicProject01/urls.py
+```python
+from django.contrib import admin
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('admin/',admin.site.urls)
+    path('',views.home, name='home')
+    path('sidd',views.sidd, name='sidd')
+
+    path("_reload_/", include("django_browser_reload.urls")           ⚠️ 
+]
+```
+## console errors and warning
+```diff
+! you have 18 unapplied migration(s)
+```
