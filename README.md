@@ -143,6 +143,7 @@ urlpatterns = [
     path('sidd',views.sidd, name='sidd')
     path('sidd/', include('sidd.urls))
 
+]
 ```
 > sidd/urls.py
 ```python
@@ -361,4 +362,35 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'                                         ⚠️ 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')                   ⚠️ 
+```
+>  basicProject01/basicProject01/urls.py
+```python
+from django.contrib import admin
+from django.urls import path
+from django.conf import settings                                 ⚠️ 
+from django.conf.urls.static import static                       ⚠️  
+from . import views
+
+urlpatterns = [
+    path('admin/',admin.site.urls)
+    path('',views.home, name='home')
+    path('sidd',views.sidd, name='sidd')
+
+    path("_reload_/", include("django_browser_reload.urls")          
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT     ⚠️ 
+```
+## Run command
+```python
+(.venv)$python manage.py makemigrations sidd
+```
+```python
+(.venv)$python manage.py migrate
+```
+## Register your model in database
+> basicProject01/sidd/admin.py
+```python
+from django.contrib import admin
+from .models import ProductVarity                                        ⚠️ 
+
+admin.site.register(ProductVarity)                                        ⚠️   
 ```
