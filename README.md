@@ -343,3 +343,22 @@ urlpatterns = [
 ```python
 (.venv)$python manage.py createsuperuser
 ```
+## Forget Password ( super user )
+```python
+(.venv)$python manage.py changepassword user_name
+```
+## TODO: // model
+## Handle image
+```python
+(.venv)$python -m pip install Pillow
+```
+> basicProject01/basicProject01/settings.py
+```python
+import os
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+MEDIA_URL = '/media/'                                         ⚠️ 
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')                   ⚠️ 
+```
