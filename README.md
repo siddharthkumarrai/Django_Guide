@@ -114,6 +114,20 @@ my_project/
 ├── .gitignore
 ├── README.md
 ```
+## Create a Templates
+> website/index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hello my name is don</h1>
+  </body>
+</html>
+```
 ## Render html page
 > views.py
 ```python
