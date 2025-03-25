@@ -62,15 +62,58 @@ urlpatterns = [
 ]
 ```
 ## Django Folder Structure
-- .venv
-- basicProject01
-    - basicProject01
-- static
-- - style.css
-- templates
-    - index.html
-- db.sqlite3
-- manage.py
+```python
+my_project/
+├── manage.py
+├── my_project/
+│   ├── __init__.py
+│   ├── settings/
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── development.py
+│   │   ├── production.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   ├── asgi.py
+├── apps/
+│   ├── __init__.py
+│   ├── app1/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── views.py
+│   │   ├── migrations/
+│   │   │   ├── __init__.py
+│   │   │   ├── 0001_initial.py
+│   │   ├── templates/
+│   │   │   ├── app1/
+│   │   │       ├── template1.html
+│   │   ├── static/
+│   │       ├── app1/
+│   │           ├── css/
+│   │           ├── js/
+│   │           ├── images/
+├── static/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+├── templates/
+│   ├── base.html
+│   ├── index.html
+├── media/
+├── requirements/
+│   ├── base.txt
+│   ├── development.txt
+│   ├── production.txt
+├── logs/
+│   ├── django.log
+│   ├── error.log
+├── .env
+├── .gitignore
+├── README.md
+```
 ## Render html page
 > views.py
 ```python
