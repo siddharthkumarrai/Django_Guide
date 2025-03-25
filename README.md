@@ -198,7 +198,7 @@ urlpatterns = [
     path('admin/',admin.site.urls)
     path('',views.home, name='home')
     path('sidd',views.sidd, name='sidd')
-    path('sidd/', include('sidd.urls))
+    path('sidd/', include('sidd.urls'))
 
 ]
 ```
