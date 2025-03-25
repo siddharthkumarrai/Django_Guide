@@ -179,7 +179,7 @@ INSTALLED_APPS = [
 - press CTRL + , and search emmit
     - Emmet: Include Languages -> click on Add Item
     - Item = django-html, Value = html
-  
+## 
 > sidd/templates/sidd/all_sidd.html
 > sidd/views.py
 ```python
