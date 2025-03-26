@@ -509,9 +509,12 @@ urlpatterns = [
     path('',views.all_product, name='all_product')
     path('<int:product_id>/', views.product_detail, name='product_detail') 
 ]
+```
 ## how to navigate through anchor tag/url
 ```html
 <a href='{% url 'product_detail' product.id %}'>
 ```
 > product_detail.html
+```html
 <h3>{{product.price}}</h3>
+```
