@@ -455,7 +455,7 @@ urlpatterns = [
     path('sidd',views.sidd, name='sidd')
 
     path("_reload_/", include("django_browser_reload.urls")          
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT     ⚠️ 
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)     ⚠️ 
 ```
 ## Run command
 ```python
