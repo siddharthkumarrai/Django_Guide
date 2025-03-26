@@ -405,7 +405,32 @@ urlpatterns = [
 ```python
 (.venv)$python manage.py changepassword user_name
 ```
-## TODO: // model
+## Create models
+> basicProject01/sidd/models.py
+```python
+from django.db import models
+
+class ProductVarity(models.model):
+    PRODUCT_TYPE_CHOICE = [
+        ('MS', 'MOUSE'),
+        ('KB', 'KEYBOARD'),
+        ('MO', 'MONITOR'),
+        ('MP', 'MOUSEPAD')
+    ]
+    name = models.CharFiels(max_length=100)
+    image = models.ImageField(upload_to='products/')
+    date_added = models.DateTimeField(default=timezone.now)
+    type = models.CharField(max_length=2, choice=CHAI_TYPE_CHOICE)
+
+    def __str__(self):
+        return self.name
+```
+> basicProject01/sidd/views.py
+```python
+def all_sidd(req):
+    products = ProductsVarity.objects.all()
+    return render(req, 'all_sidd.html', {'products': products})
+
 ## Handle image
 ```python
 (.venv)$python -m pip install Pillow
