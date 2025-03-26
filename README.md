@@ -425,12 +425,6 @@ class ProductVarity(models.model):
     def __str__(self):
         return self.name
 ```
-> basicProject01/sidd/views.py
-```python
-def all_sidd(req):
-    products = ProductsVarity.objects.all()
-    return render(req, 'all_sidd.html', {'products': products})
-```
 ## Handle image
 ```python
 (.venv)$python -m pip install Pillow
@@ -475,4 +469,22 @@ from django.contrib import admin
 from .models import ProductVarity                                        ⚠️ 
 
 admin.site.register(ProductVarity)                                        ⚠️   
+```
+## How to send data in front-end from database
+> basicProject01/sidd/views.py
+```python
+from . import models
+def all_sidd(req):
+    products = models.ProductsVarity.objects.all()
+    return render(req, 'all_sidd.html', {'all_products': products})
+```
+## How to fetch data in templates index.html
+```html
+  <body>
+    <h1>all chai is here present</h1>
+    {% for product in all_products %}
+    <p>{{ product }}</p>
+    {% endfor %}
+  </body>
+</html>
 ```
