@@ -430,7 +430,7 @@ class ProductVarity(models.model):
 def all_sidd(req):
     products = ProductsVarity.objects.all()
     return render(req, 'all_sidd.html', {'products': products})
-
+```
 ## Handle image
 ```python
 (.venv)$python -m pip install Pillow
