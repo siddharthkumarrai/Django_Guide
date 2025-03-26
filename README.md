@@ -409,6 +409,8 @@ urlpatterns = [
 > basicProject01/sidd/models.py
 ```python
 from django.db import models
+from django.utils import timezone
+
 
 class ProductVarity(models.model):
     PRODUCT_TYPE_CHOICE = [
