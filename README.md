@@ -473,9 +473,9 @@ admin.site.register(ProductVarity)                                        ⚠️
 ## How to send data in front-end from database
 > basicProject01/sidd/views.py
 ```python
-from . import models
+from .models import ProductVarity
 def all_sidd(req):
-    products = models.ProductsVarity.objects.all()
+    products = ProductsVarity.objects.all()
     return render(req, 'all_sidd.html', {'all_products': products})
 ```
 ## How to fetch data in templates index.html
@@ -483,8 +483,35 @@ def all_sidd(req):
   <body>
     <h1>all chai is here present</h1>
     {% for product in all_products %}
+    <a href='{% url 'product_detail' product.id %}'>
     <p>{{ product }}</p>
+    </a>
     {% endfor %}
   </body>
 </html>
 ```
+## product_detail page
+> basicProject01/product/views.py
+```python
+from .models import ProductVarity
+from django.shortcuts import get_object_or_404
+
+def product_detail(req,product_id):
+    product = get_object_or_404(ProductVarity, pk=product_id)
+    return render(req,'product_detail.html,{'product':product})
+```
+## handel url
+> basicProject01/product/urls.py
+```python
+from django.urls import path
+
+urlpatterns = [
+    path('',views.all_product, name='all_product')
+    path('<int:product_id>/', views.product_detail, name='product_detail') 
+]
+## how to navigate through anchor tag/url
+```html
+<a href='{% url 'product_detail' product.id %}'>
+```
+> product_detail.html
+<h3>{{product.price}}</h3>
